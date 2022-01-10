@@ -17,3 +17,9 @@ body{
     height: 450px;
     width: 450px;
 }
+
+.graphic{
+    fill:transparent;
+    stroke: #fff;
+    stroke-width: 4px;
+}
