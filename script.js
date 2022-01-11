@@ -1,4 +1,5 @@
 const word_el=document.getElementById('word');
+const popup= document.getElementById('popup-container');
 
 const correctLetters = ['j','a','v','s','t'];
 const wrongLetters = [];
@@ -22,7 +23,8 @@ function getRandomWord(){
 
         const w=word_el.innerText.replace(/\n/g, '');
         if (w===selectedWord){
-            console.log('congratulations, you won')
+        popup.style.display='flex';
+
         }
 }
 
