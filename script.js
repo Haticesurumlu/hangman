@@ -2,10 +2,10 @@ const word_el=document.getElementById('word');
 const popup= document.getElementById('popup-container');
 const message_el=document.getElementById('success-message');
 
-const correctLetters = ['j','a','v','s','t'];
+const correctLetters = ['j','a','v','s','t','e','p','k','y','c','r','u','i','o','L','m','n','x'];
 const wrongLetters = [];
 function getRandomWord(){
-    const words= ["Expecto Patronum","Expelliarmus","Accio","Piertotum Locomotor","Episkey","Oculus Reparo","Stupefy","Obliviate","Lumos","Crucio","Avada Kedavra"]
+    const words= ["expecto patronum","expelliarmus","accio","piertotum locomotor","episkey","oculus reparo","stupefy","obliviate","lumos","crucio","avada kedavra"]
     return words[Math.floor(Math.random() * words.length)];
 }
 
