@@ -1,7 +1,7 @@
 const word_el=document.getElementById('word');
 
-const correctLetters=
-
+const correctLetters = ['j','a','v','s','t'];
+const wrongLetters = [];
 function getRandomWord(){
     const words= ["Expecto Patronum","Expelliarmus","Accio","Piertotum Locomotor","Episkey","Oculus Reparo","Stupefy","Obliviate","Lumos","Crucio","Avada Kedavra"]
     return words[Math.floor(Math.random() * words.length)];
