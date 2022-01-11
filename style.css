@@ -38,3 +38,14 @@ body{
 #word{
     display: flex;
 }
+
+.letter{
+    border-bottom: 3px solid yellow;
+    font-size: 30px;
+    margin: 0 3px;
+    height: 40px;
+    width: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
