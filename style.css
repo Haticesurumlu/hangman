@@ -24,3 +24,13 @@ body{
     stroke: #fff;
     stroke-width: 4px;
 }
+
+.item{
+
+}
+
+#wrong-letters{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
