@@ -31,9 +31,10 @@ function getRandomWord(){
 }
 
 window.addEventListener('keydown',function(e){
-
+  if(e.keyCode>=65 && e.keyCode<=90){ //this range covers only the letters on the keyboard.
     console.log(e.key);
     console.log(e.keyCode);
+}
 });
 
 displayWord()
