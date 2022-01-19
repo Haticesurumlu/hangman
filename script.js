@@ -11,12 +11,11 @@ const wrongLetters = [];
 let selectedWord = getRandomWord();
 
 function getRandomWord(){
-    const words= ["expecto-patronum","muhammed"]
+    const words= ["expecto-patronum",,"expelliarmus","accio","piertotum-locomotor","episkey","oculus-reparo","stupefy","obliviate","lumos","crucio",]
     return words[Math.floor(Math.random() * words.length)];
 }
 
 
-// "expelliarmus","accio","piertotum-locomotor","episkey","oculus-reparo","stupefy","obliviate","lumos","crucio",
 
     function displayWord() {
        word_el.innerHTML = `
@@ -38,7 +37,7 @@ function getRandomWord(){
 
 function updateWrongLetters() {
     wrongLetters_el.innerHTML = `
-        ${wrongLetters.length>0?'<h3>Hatalı harfler</h3>':''}
+        ${wrongLetters.length>0?'<h3> Wrong Letters</h3>':''}
         ${wrongLetters.map(letter=> `<span>${letter}<span>`)}
     `;
     items.forEach((item,index) => {
@@ -52,7 +51,7 @@ function updateWrongLetters() {
     })
     if(wrongLetters.length === items.length) {
         popup.style.display = 'flex';
-        message_el.innerText = 'Maalesef Kaybettiniz.';
+        message_el.innerText = 'You just lost the game';
     }
     
         }
