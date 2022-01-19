@@ -3,10 +3,12 @@ const popup= document.getElementById('popup-container');
 const message_el=document.getElementById('success-message');
 const wrongLetters_el=document.getElementById('wrong-letters');
 const items = document.querySelectorAll('.item');
+const message = document.getElementById('message');
+const PlayAgainBtn = document.getElementById('play-again');
 
 const correctLetters = ['-'];
 const wrongLetters = [];
-const selectedWord = getRandomWord();
+let selectedWord = getRandomWord();
 
 function getRandomWord(){
     const words= ["expecto-patronum","muhammed"]
@@ -48,48 +50,57 @@ function updateWrongLetters() {
             item.style.display = 'none';
         }
     })
-
-    
-        }
-    
-
-
-// window.addEventListener('keydown',function(e){
-//  if(e.keyCode>=32 && e.keyCode<=250){ //this range covers only the letters on the keyboard.
-//   const letter=e.key;
-
-//   if(selectedWord.includes(letter)){
-//       if(!correctLetters.includes(letter)){
-//           correctLetters.push(letter);
-
-//           displayWord();
-//       }
-//   }
-// }
-// });
-
-// displayWord()
-
-
-window.addEventListener('keydown', function(e) {
-    if (e.keyCode >= 65 && e.keyCode <= 290) {        
-        const letter = e.key;
-
-        if (selectedWord.includes(letter)) {
-            if (!correctLetters.includes(letter)) {
-                correctLetters.push(letter);
-                displayWord();
-            } else {
-                displayMessage('bu harfi eklemiştiniz.');
-            }
-        } else {
-            if(!wrongLetters.includes(letter)) {
-                wrongLetters.push(letter);
-                updateWrongLetters();
-            }
-        
-        }
+    if(wrongLetters.length === items.length) {
+        popup.style.display = 'flex';
+        message_el.innerText = 'Maalesef Kaybettiniz.';
     }
-});
+    
+        }
+
+        function displayMessage() {    
+            message.classList.add('show');
+        
+            setTimeout(function() {
+                message.classList.remove('show');
+            }, 2000);
+        }
+
+        PlayAgainBtn.addEventListener('click', function() {
+            correctLetters.splice(0);
+            wrongLetters.splice(0);
+            
+            selectedWord = getRandomWord();
+            displayWord();
+            updateWrongLetters();
+        
+            popup.style.display = 'none';
+        });
+    
+
+        window.addEventListener('keydown', function(e) {
+            if (e.keyCode >= 65 && e.keyCode <= 90) {        
+                const letter = e.key;
+        
+                if (selectedWord.includes(letter)) {
+                    if (!correctLetters.includes(letter)) {
+                        correctLetters.push(letter);
+                        displayWord();
+                    } else {
+                        displayMessage();
+                    }
+                } else {
+                    if(!wrongLetters.includes(letter)) {
+                        wrongLetters.push(letter);
+                        updateWrongLetters();
+                    }
+                    else {
+                        displayMessage();
+                    }
+                }
+            }
+        });
+
+
+
 
 displayWord()
