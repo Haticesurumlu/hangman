@@ -11,7 +11,7 @@ const wrongLetters = [];
 let selectedWord = getRandomWord();
 
 function getRandomWord(){
-    const words= ["expecto-patronum",,"expelliarmus","accio","piertotum-locomotor","episkey","oculus-reparo","stupefy","obliviate","lumos","crucio",]
+    const words= ["expecto-patronum",,"expelliarmus","accio","piertotumlocomotor","episkey","oculusreparo","stupefy","obliviate","lumos","crucio","sectumsempra"]
     return words[Math.floor(Math.random() * words.length)];
 }
 
